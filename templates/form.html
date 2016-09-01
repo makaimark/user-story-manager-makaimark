@@ -9,22 +9,23 @@
 			<form action="/story" method="post">
 	
 				<h3>Story title</h3>
-				<textarea name='story_title' rows="1" cols="50"> </textarea>
+				<textarea name='story_title' rows="1" cols="50">{{user_story.story_title}}</textarea>
 
 				<h3>User story</h3>
-				<textarea name='user_story' rows="4" cols="50"> </textarea>
+				<textarea name='user_story' rows="4" cols="50">{{user_story.user_story}}</textarea>
 
 				<h3>Acceptance criteria</h3>
-				<textarea name='acceptance_criteria' rows="4" cols="50"> </textarea>
+				<textarea name='acceptance_criteria' rows="4" cols="50">{{user_story.acceptance_criteria}}</textarea>
 
 				<h3>Business value</h3>
-				<textarea name='business_value' rows="1" cols="10"> </textarea>
+				<input name='business_value' type="number" value={{user_story.business_value}} min="100" max="1500" step="10" />
 
 				<h3>Estimation (h)</h3>
-				<textarea name='estimation' rows="1" cols="10"> </textarea>
+				<input name='estimation' type="number" value={{user_story.estimation}} min="0.5" max="40" step="0.5"/>
 
 				<h3>Status</h3>
 				<select name = 'status'>
+					<option value={{user_story.status}}>{{user_story.status}}</option>
 				  <option value="planning">Planning</option>
 				  <option value="to do">To do</option>
 				  <option value="review">Review</option>

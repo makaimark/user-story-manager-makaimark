@@ -2,6 +2,7 @@
 <html>
 	<head>
 	    <title>User story manager</title>
+
 	</head>
 	<style>
 		table, th, td {
@@ -9,6 +10,7 @@
 		}
 	</style>
 		<body>
+
 			<form action='http://localhost:9876/story'>
 				<input type="submit" value="Add new user story" />
 			</form>
@@ -23,6 +25,8 @@
 							<td>Business value</td>
 							<td>Estimation time</td>
 							<td>Status</td>
+							<td>Delete</td>
+							<td>Edit</td>
 						</tr>
 						{% for n in user_stories %}
 						<tr>
@@ -32,6 +36,8 @@
 							<td>{{n.business_value}}</td>
 							<td>{{n.estimation}}</td>
 							<td>{{n.status}}</td>
+							<td><a href="{{web2}}/{{n.id}}">Delete</a></td>
+							<td><a href="{{web}}/{{n.id}}">Edit</a></td>
 						</tr>
 						{% endfor %}
 					</table>

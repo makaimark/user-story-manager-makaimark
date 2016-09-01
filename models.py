@@ -20,6 +20,6 @@ class UserStory(BaseModel):
     story_title = CharField()
     user_story = CharField()
     acceptance_criteria = CharField()
-    business_value = IntegerField()
-    estimation = IntegerField()
+    business_value = FloatField()
+    estimation = FloatField()
     status = CharField()

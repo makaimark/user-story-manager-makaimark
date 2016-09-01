@@ -1,10 +1,7 @@
 from peewee import *
 import config
-from flask import Flask, request
 
 
-app = Flask('Tweetcool server')
-DATABASE = 'sprint_reporter_app.db'
 
 
 # Configure your database connection here
@@ -23,6 +20,6 @@ class UserStory(BaseModel):
     story_title = CharField()
     user_story = CharField()
     acceptance_criteria = CharField()
-    business_value = CharField()
+    business_value = IntegerField()
     estimation = IntegerField()
     status = CharField()

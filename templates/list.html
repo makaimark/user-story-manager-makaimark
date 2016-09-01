@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>User story manager</title>
+	</head>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+	</style>
+		<body>
+			<form action='http://localhost:9876/story'>
+				<input type="submit" value="Add new user story" />
+			</form>
+
+			<div>
+				<ul>
+					<table style="width:100%">
+						<tr>
+							<td>Story title</td>
+							<td>User story</td>
+							<td>Acceptance criteria</td>
+							<td>Business value</td>
+							<td>Estimation time</td>
+							<td>Status</td>
+						</tr>
+						{% for n in user_stories %}
+						<tr>
+							<td>{{n.story_title}}</td>
+							<td>{{n.user_story}}</td>
+							<td>{{n.acceptance_criteria}}</td>
+							<td>{{n.business_value}}</td>
+							<td>{{n.estimation}}</td>
+							<td>{{n.status}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+      			</ul>
+
+			</div>
+
+		</body>
+
+</html>

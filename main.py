@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 @app.route('/story', methods=['GET'])
 def story():
-    empty_object = UserStory(story_title = "", user_story = "", acceptance_criteria = "", business_value = "100",
+    empty_object = UserStory(id = "", story_title = "", user_story = "", acceptance_criteria = "", business_value = "100",
                              estimation = "0.5", status = "choose an option")
     return render_template('form.html', user_story = empty_object)
 
 
-@app.route('/story', methods=['POST'])
+@app.route('/story/', methods=['POST'])
 def handle_data():
     user_story = UserStory.create(story_title=request.form['story_title'],
                             user_story=request.form['user_story'],

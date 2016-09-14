@@ -1,43 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	    <title>User story manager - Add new story</title>
-	</head>
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
 
-		<body>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-			<form action="/story/{{user_story.id}}" method="post">
-	
-				<h3>Story title</h3>
-				<textarea name='story_title' rows="1" cols="50">{{user_story.story_title}}</textarea>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/mystyle.css">
+</head>
 
-				<h3>User story</h3>
-				<textarea name='user_story' rows="4" cols="50">{{user_story.user_story}}</textarea>
+<body style="padding-top: 70px">
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">User story manager - Add new story</a>
+                <a class="navbar-brand" href="/list">Home</a>
+            </div>
 
-				<h3>Acceptance criteria</h3>
-				<textarea name='acceptance_criteria' rows="4" cols="50">{{user_story.acceptance_criteria}}</textarea>
+        </div>
+    </nav>
 
-				<h3>Business value</h3>
-				<input name='business_value' type="number" value={{user_story.business_value}} min="100" max="1500" step="10" />
+    <form action="/story/{{user_story.id}}" method="post">
 
-				<h3>Estimation (h)</h3>
-				<input name='estimation' type="number" value={{user_story.estimation}} min="0.5" max="40" step="0.5"/>
+        <h3>Story title</h3>
+        <div class="input-group">
+            <input type="text" name='story_title' class="form-control" placeholder="Title"
+                   aria-describedby="basic-addon1" required>{{user_story.story_title}}</input>
+        </div>
 
-				<h3>Status</h3>
-				<select name = 'status'>
-					<option value={{user_story.status}}>{{user_story.status}}</option>
-				  <option value="planning">Planning</option>
-				  <option value="to do">To do</option>
-				  <option value="review">Review</option>
-				  <option value="done">Done</option>
-				</select>
+        <h3>User story</h3>
+        <div class="input-group">
+            <input type="text" name='user_story' class="form-control"
+                   placeholder="User Story" required>{{user_story.user_story}}</input>
+        </div>
 
-				<button type='submit'>Save</button>
+        <h3>Acceptance criteria</h3>
+        <div class="input-group">
+            <input type="text" name='acceptance_criteria' class="form-control"
+                   placeholder="Acceptance criteria" required>{{user_story.acceptance_criteria}}</input>
+        </div>
 
-			</form>
+        <h3>Business value</h3>
+        <div class="input-group">
+            <input name='business_value' type="number" class="form-control" value={{user_story.business_value}}
+                   min="100" max="1500" step="10"/>
+        </div>
 
-			
-		</body>
+        <h3>Estimation (h)</h3>
+        <div class="input-group">
+            <input name='estimation' type="number" class="form-control" value={{user_story.estimation}} min="0.5"
+                   max="40" step="0.5"/>
+        </div>
+
+        <h3>Status</h3>
+        <div>
+            <select class="form-control" name='status' required>
+                <option value={{user_story.status}}>{{user_story.status}}</option>
+                <option value="planning">Planning</option>
+                <option value="to do">To do</option>
+                <option value="review">Review</option>
+                <option value="done">Done</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-default btn-sm" type='submit'>Save</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
 </html>
 
 

@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	    <title>User story manager</title>
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
 
-	</head>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-		}
-	</style>
-		<body>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-			<form action='http://localhost:9876/story'>
-				<input type="submit" value="Add new user story" />
-			</form>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-			<div>
-				<ul>
-					<table style="width:100%">
-						<tr>
-							<td>Story title</td>
-							<td>User story</td>
-							<td>Acceptance criteria</td>
-							<td>Business value</td>
-							<td>Estimation time</td>
-							<td>Status</td>
-							<td>Delete</td>
-							<td>Edit</td>
-						</tr>
-						{% for n in user_stories %}
-						<tr>
-							<td>{{n.story_title}}</td>
-							<td>{{n.user_story}}</td>
-							<td>{{n.acceptance_criteria}}</td>
-							<td>{{n.business_value}}</td>
-							<td>{{n.estimation}}</td>
-							<td>{{n.status}}</td>
-							<td><a href="{{web2}}/{{n.id}}">Delete</a></td>
-							<td><a href="{{web}}/{{n.id}}">Edit</a></td>
-						</tr>
-						{% endfor %}
-					</table>
-      			</ul>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<body style="padding-top: 70px">
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">User story manager - List stories</a>
+                <a class="navbar-brand" href="/story">Add new story</a>
+            </div>
 
-			</div>
+        </div>
+    </nav>
 
-		</body>
+<div>
+    <ul>
+        <table class="table table-bordered" style="width:100%">
+            <tr>
+                <td>Story title</td>
+                <td>User story</td>
+                <td>Acceptance criteria</td>
+                <td>Business value</td>
+                <td>Estimation time</td>
+                <td>Status</td>
+                <td>Delete</td>
+                <td>Edit</td>
+            </tr>
+            {% for n in user_stories %}
+            <tr>
+                <td>{{n.story_title}}</td>
+                <td>{{n.user_story}}</td>
+                <td>{{n.acceptance_criteria}}</td>
+                <td>{{n.business_value}}</td>
+                <td>{{n.estimation}}</td>
+                <td>{{n.status}}</td>
+                <td><a href="{{web2}}/{{n.id}}">Delete</a></td>
+                <td><a href="{{web}}/{{n.id}}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </ul>
+
+</div>
+
+</body>
 
 </html>

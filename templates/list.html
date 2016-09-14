@@ -11,12 +11,14 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
 </head>
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
+
 <body style="padding-top: 70px">
 <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -51,10 +53,13 @@
                 <td>{{n.business_value}}</td>
                 <td>{{n.estimation}}</td>
                 <td>{{n.status}}</td>
-                <td><a href="{{web2}}/{{n.id}}">Delete</a></td>
-                <td><a href="{{web}}/{{n.id}}">Edit</a></td>
+                <div>
+                    <td><a href="{{web2}}/{{n.id}}" class="btn btn-info btn-xs" role="button">Delete</a></td>
+                </div>
+                <td><a href="{{web}}/{{n.id}}" class="btn btn-info btn-xs" role="button">Edit</a></td>
             </tr>
             {% endfor %}
+
         </table>
     </ul>
 

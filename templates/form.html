@@ -26,51 +26,53 @@
         </div>
     </nav>
 
-    <form action="/story/{{user_story.id}}" method="post">
+    <br action="/story/{{user_story.id}}" method="post">
 
-        <h3>Story title</h3>
-        <div class="input-group">
-            <input type="text" name='story_title' class="form-control" placeholder="Title"
-                   aria-describedby="basic-addon1" required value={{user_story.story_title}}>
-        </div>
+    <h4>Story title</h4>
+    <div class="input-group">
+        <input type="text" name='story_title' class="form-control" placeholder="Title"
+               aria-describedby="basic-addon1" required value={{user_story.story_title}}>
+    </div>
 
-        <h3>User story</h3>
-        <div class="input-group">
-            <input type="text" name='user_story' class="form-control"
-                   placeholder="User Story" required value={{user_story.user_story}}>
-        </div>
+    <h4>User story</h4>
+    <div class="input-group">
+        <input type="text" name='user_story' class="form-control"
+               placeholder="User Story" required value={{user_story.user_story}}>
+    </div>
 
-        <h3>Acceptance criteria</h3>
-        <div class="input-group">
-            <input type="text" name='acceptance_criteria' class="form-control"
-                   placeholder="Acceptance criteria" required value={{user_story.acceptance_criteria}}>
-        </div>
+    <h4>Acceptance criteria</h4>
+    <div class="input-group">
+        <input type="text" name='acceptance_criteria' class="form-control"
+               placeholder="Acceptance criteria" required value={{user_story.acceptance_criteria}}>
+    </div>
 
-        <h3>Business value</h3>
-        <div class="input-group">
-            <input name='business_value' type="number" class="form-control" value={{user_story.business_value}}
-                   min="100" max="1500" step="10"/>
-        </div>
+    <h4>Business value</h4>
+    <div class="input-group">
+        <input name='business_value' type="number" class="form-control" value={{user_story.business_value}}
+               min="100" max="1500" step="10"/>
+    </div>
 
-        <h3>Estimation (h)</h3>
-        <div class="input-group">
-            <input name='estimation' type="number" class="form-control" value={{user_story.estimation}} min="0.5"
-                   max="40" step="0.5"/>
-        </div>
-
-        <h3>Status</h3>
-        <div>
-            <select class="form-control" name='status' required>
-                <option value={{user_story.status}}>{{user_story.status}}</option>
-                <option value="planning">Planning</option>
-                <option value="to do">To do</option>
-                <option value="review">Review</option>
-                <option value="done">Done</option>
-            </select>
-        </div>
-        <div>
-            <button class="btn btn-default btn-sm" type='submit'>Save</button>
-        </div>
+    <h4>Estimation (h)</h4>
+    <div class="input-group">
+        <input name='estimation' type="number" class="form-control" value={{user_story.estimation}} min="0.5"
+               max="40" step="0.5"/>
+    </div>
+    <br>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Status
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li value={{user_story.status}}>{{user_story.status}}</li>
+            <li value="planning">Planning</li>
+            <li value="to do">To do</li>
+            <li value="review">Review</li>
+            <li value="done">Done</li>
+        </ul>
+    </div>
+    </br>
+    <div>
+        <button class="btn btn-default btn-sm" type='submit'>Save</button>
+    </div>
 
     </form>
 </div>
